@@ -19,7 +19,7 @@ Test the string appending in difference way.
 0. <var>new(bytes.Buffer)</var> almost same as <var>bytes.Buffer{}</var>
 0. define bytes.Buffer outside each looping only needs <mark>0.589865 ms</mark> (only <mark>43%</mark> from Instantly define)
 
-#Benchmark
+# Benchmark
 <pre>
 410000
 time of way(0)=573.444884ms
