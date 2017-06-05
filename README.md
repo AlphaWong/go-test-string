@@ -12,12 +12,12 @@ Test the string appending in difference way.
 
 # Actual result
 0. strings.Join share the worst performance.
-0. fmt.Sprintf() needs <mark>50%</mark> from strings.Join.
-0. string + (direct append) needs <mark>65%</mark> from fmt.Sprintf().
-0. Instantly define a bytes.Buffer inside each loop via <var>bytes.NewBuffer</var> needs <mark>1.675%</mark> from direct append
-0.  Instantly define a bytes.Buffer inside each loop via <var>bytes.Buffer{}</var> needs <mark>45.61%</mark> from <var>bytes.NewBuffer</var>
+0. fmt.Sprintf() needs <strong>50%</strong> from strings.Join.
+0. string + (direct append) needs <strong>65%</strong> from fmt.Sprintf().
+0. Instantly define a bytes.Buffer inside each loop via <var>bytes.NewBuffer</var> needs <strong>1.675%</strong> from direct append
+0.  Instantly define a bytes.Buffer inside each loop via <var>bytes.Buffer{}</var> needs <strong>45.61%</strong> from <var>bytes.NewBuffer</var>
 0. <var>new(bytes.Buffer)</var> almost same as <var>bytes.Buffer{}</var>
-0. define bytes.Buffer outside each looping only needs <mark>0.589865 ms</mark> (only <mark>43%</mark> from Instantly define)
+0. define bytes.Buffer outside each looping only needs <strong>0.589865 ms</strong> (only <strong>43%</strong> from Instantly define)
 
 # Benchmark
 <pre>
@@ -35,6 +35,7 @@ time of way(4)=1.553018ms
 time of way(5)=1.357562ms
 410000
 time of way(6)=589.865µs
+
 way 0 is  972.2 times of way 6
 way 1 is  518.3 times of way 6
 way 2 is  337.7 times of way 6
