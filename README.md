@@ -11,12 +11,12 @@ Test the string appending in difference way.
 1. Instantly define a bytes.Buffer inside each looping will slow then method 3 50%
 
 # Actual result
-0. strings.Join share the worst performance.
-0. fmt.Sprintf() needs <strong>50%</strong> from strings.Join.
-0. string + (direct append) needs <strong>65%</strong> from fmt.Sprintf().
-0. Instantly define a bytes.Buffer inside each loop via <var>bytes.NewBuffer</var> needs <strong>1.675%</strong> from direct append
-0.  Instantly define a bytes.Buffer inside each loop via <var>bytes.Buffer{}</var> needs <strong>45.61%</strong> from <var>bytes.NewBuffer</var>
-0. <var>new(bytes.Buffer)</var> almost same as <var>bytes.Buffer{}</var>
+0. <kbd>strings.Join</kbd> share the worst performance.
+0. <kbd>fmt.Sprintf()</kbd> needs <strong>50%</strong> from strings.Join.
+0. <kbd>string +</kbd> (direct append) needs <strong>65%</strong> from fmt.Sprintf().
+0. Instantly define a bytes.Buffer inside each loop via <kbd>bytes.NewBuffer</kbd> needs <strong>1.675%</strong> from direct append
+0.  Instantly define a bytes.Buffer inside each loop via <kbd>bytes.Buffer{}</kbd> needs <strong>45.61%</strong> from <kbd>bytes.NewBuffer</kbd>
+0. <kbd>new(bytes.Buffer)</kbd> almost same as <kbd>bytes.Buffer{}</kbd>
 0. define bytes.Buffer outside each looping only needs <strong>0.589865 ms</strong> (only <strong>43%</strong> from Instantly define)
 
 # Benchmark
